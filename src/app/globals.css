@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: "Inter", -apple-system, sans-serif;
+  --color-navy: #0a1628;
+  --color-mid: #12203d;
+  --color-light: #1a3058;
+  --color-off: #f0f2f5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've redeclared it here to maintain backward compatibility.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-gray-200, currentColor);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: auto; /* GSAP handles smooth scroll */
+    overflow-x: hidden;
+  }
+  body {
+    @apply font-sans bg-navy text-navy antialiased overflow-x-hidden;
+  }
+  ul {
+    @apply list-none p-0 m-0;
+  }
+  a {
+    @apply no-underline text-inherit;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16;
+  }
+  .reveal {
+    @apply opacity-0 translate-y-10;
+  }
+}
+
+/* Custom Utilities from Original */
+.selection-white::selection {
+  background: #1a3058;
+  color: #fff;
+}
+
+@keyframes scrollLine {
+  0% { left: -100%; }
+  50% { left: 0; }
+  100% { left: 100%; }
+}
+
+.animate-scrollLine {
+  animation: scrollLine 2s ease-in-out infinite;
 }

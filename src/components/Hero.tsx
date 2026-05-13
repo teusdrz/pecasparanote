@@ -90,7 +90,7 @@ export default function Hero() {
         <div className="max-w-[850px]">
           <h1 className="text-5xl md:text-7xl lg:text-[90px] font-black leading-[0.9] tracking-[-4px] text-white mb-10 uppercase">
             <span className="block overflow-hidden pb-2">
-              <span ref={titleLine1Ref} className="inline-block translate-y-full">Seu notebook</span>
+              <span ref={titleLine1Ref} className="inline-block translate-y-full">Seu equipamento</span>
             </span>
             <span className="block overflow-hidden pb-2">
               <span ref={titleLine2Ref} className="inline-block translate-y-full text-white/30">em boas mãos.</span>

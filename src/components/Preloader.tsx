@@ -13,13 +13,19 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    const nameEl = logoRef.current?.querySelector('.preloader-name') as HTMLElement | null;
+    const infoEl = logoRef.current?.querySelector('.preloader-info') as HTMLElement | null;
+    const iconEl = logoRef.current?.querySelector('.preloader-icon') as HTMLElement | null;
+
     const tl = gsap.timeline({
       onComplete: () => {
         onComplete();
       },
     });
 
-    tl.to(logoRef.current, { opacity: 1, duration: 0.6, ease: 'power2.out' })
+    tl.fromTo(iconEl, { opacity: 0, scale: 0.7 }, { opacity: 0.9, scale: 1, duration: 0.5, ease: 'back.out(1.7)' })
+      .fromTo(nameEl, { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, '-=0.2')
+      .fromTo(infoEl, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.45, ease: 'power3.out' }, '-=0.25')
       .to(
         fillRef.current,
         {
@@ -52,14 +58,14 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     >
       <div
         ref={logoRef}
-        className="flex flex-col items-center gap-2 opacity-0"
+        className="flex flex-col items-center gap-2"
       >
         <div className="flex items-center gap-4 mb-1">
-          <Power className="w-8 h-8 text-white opacity-90" />
-          <span className="text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase">
+          <Power className="preloader-icon w-8 h-8 text-white opacity-0" />
+          <span className="preloader-name text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
             Pecasparanote
           </span>
-          <span className="text-[11px] font-medium text-white/40 tracking-[6px] uppercase self-end mb-1">
+          <span className="preloader-info text-[11px] font-black text-white tracking-[6px] uppercase self-end mb-1 opacity-0">
             Informática
           </span>
         </div>

@@ -52,7 +52,7 @@ export default function Navbar() {
             <a
               href={`#${item}`}
               onClick={(e) => scrollToSection(e, `#${item}`)}
-              className="text-[11px] font-bold text-white/40 hover:text-white transition-all tracking-[2px] uppercase"
+              className="text-[11px] font-bold text-white hover:text-white/70 transition-all tracking-[2px] uppercase"
             >
               {item === 'servicos' ? 'Serviços' : item}
             </a>

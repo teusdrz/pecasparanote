@@ -1,13 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { Laptop, Tv, Printer, Cpu, ArrowRight, Triangle } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const services = [
   {
@@ -41,32 +34,8 @@ const services = [
 ];
 
 export default function Services() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const items = gsap.utils.toArray('.service-card') as HTMLElement[];
-      
-      gsap.to(items, {
-        xPercent: -100 * (items.length - 1),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          scrub: 1,
-          snap: 1 / (items.length - 1),
-          start: 'top 80px',
-          end: () => `+=${scrollRef.current?.offsetWidth}`,
-        }
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="servicos" className="min-h-screen bg-white overflow-hidden py-24 md:py-0 flex flex-col justify-center">
+    <section id="servicos" className="bg-white py-24">
       <div className="container mb-12 md:mb-20">
         <p className="text-[10px] font-bold tracking-[4px] uppercase text-navy/30 mb-6 flex items-center gap-3">
           <Triangle className="w-2 h-2 fill-navy text-navy" />
@@ -77,23 +46,23 @@ export default function Services() {
         </h2>
       </div>
 
-      <div className="relative">
-        <div ref={scrollRef} className="flex gap-8 px-8 md:px-16 w-fit">
+      <div className="container">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              className="service-card w-[85vw] md:w-[450px] shrink-0 bg-white border border-navy/5 rounded-[40px] p-12 md:p-16 hover:bg-navy transition-all duration-700 group cursor-pointer shadow-2xl shadow-navy/5"
+              className="service-card aspect-square bg-white border border-navy/5 rounded-[40px] p-10 hover:bg-navy transition-all duration-700 group cursor-pointer shadow-2xl shadow-navy/5 flex flex-col justify-between"
             >
-              <div className="text-[11px] font-black text-navy/10 mb-10 tracking-[2px] group-hover:text-white/10 transition-colors">
+              <div className="text-[11px] font-black text-navy/10 mb-6 tracking-[2px] group-hover:text-white/10 transition-colors">
                 {service.id}
               </div>
-              <div className="text-navy mb-10 group-hover:text-white transition-colors">
+              <div className="text-navy mb-6 group-hover:text-white transition-colors">
                 <service.icon className="w-16 h-16 stroke-[1]" />
               </div>
               <h3 className="text-3xl md:text-4xl font-black text-navy mb-6 tracking-[-1.5px] uppercase group-hover:text-white transition-colors">
                 {service.title}
               </h3>
-              <p className="text-base font-light leading-relaxed text-navy/50 mb-12 group-hover:text-white/50 transition-colors">
+              <p className="text-base font-light leading-relaxed text-navy/50 mb-6 group-hover:text-white/50 transition-colors">
                 {service.desc}
               </p>
               <a href={service.link} className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-navy group-hover:text-white border-b border-navy/10 group-hover:border-white/20 pb-1">

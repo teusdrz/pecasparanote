@@ -46,7 +46,7 @@ export default function Home() {
               'Substituição de displays de alta fidelidade',
               'Calibração de sistemas de refrigeração',
             ]}
-            image="/tv-break/image.png"
+            image="/image-hadware/image.png"
           />
 
           <ServiceDetail

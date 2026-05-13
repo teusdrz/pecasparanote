@@ -23,8 +23,10 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       },
     });
 
-    tl.fromTo(iconEl, { opacity: 0, scale: 0.7 }, { opacity: 0.9, scale: 1, duration: 0.5, ease: 'back.out(1.7)' })
-      .fromTo(nameEl, { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, '-=0.2')
+    tl.fromTo(iconEl, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' })
+      .to(iconEl, { color: '#ef4444', filter: 'drop-shadow(0 0 8px rgba(239,68,68,0.7))', duration: 0.45, ease: 'power2.inOut' })
+      .to(iconEl, { color: '#ffffff', filter: 'drop-shadow(0 0 0px rgba(239,68,68,0))', duration: 0.55, ease: 'power2.inOut', delay: 0.15 })
+      .fromTo(nameEl, { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, '-=0.3')
       .fromTo(infoEl, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.45, ease: 'power3.out' }, '-=0.25')
       .to(
         fillRef.current,

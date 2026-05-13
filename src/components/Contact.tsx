@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { MapPin, Phone, Clock, Triangle } from 'lucide-react';
+import { MapPin, Phone, Clock, Triangle, Power } from 'lucide-react';
 import gsap from 'gsap';
 
 export default function Contact() {
@@ -21,16 +21,16 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // WhatsApp logic
     const phone = '5511997246578';
     const text = `*Nova Solicitação de Orçamento - Pecasparanote*%0A%0A` +
-                 `*Nome:* ${formData.nome}%0A` +
-                 `*Telefone:* ${formData.telefone}%0A` +
-                 `*E-mail:* ${formData.email}%0A` +
-                 `*Serviço:* ${formData.servico}%0A` +
-                 `*Mensagem:* ${formData.mensagem}`;
-    
+      `*Nome:* ${formData.nome}%0A` +
+      `*Telefone:* ${formData.telefone}%0A` +
+      `*E-mail:* ${formData.email}%0A` +
+      `*Serviço:* ${formData.servico}%0A` +
+      `*Mensagem:* ${formData.mensagem}`;
+
     window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
   };
 
@@ -59,7 +59,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="contact-info">
             <p className="text-[10px] font-bold tracking-[4px] uppercase text-white/30 mb-6 flex items-center gap-3">
-              <Triangle className="w-2 h-2 fill-white text-white" />
+              <Power strokeWidth={2.5} className="w-3 h-3 text-white" />
               Localização & Contato
             </p>
             <h2 className="contact-reveal text-5xl md:text-7xl font-black text-white tracking-[-3px] mb-8 uppercase leading-[0.9]">
@@ -68,7 +68,7 @@ export default function Contact() {
             <p className="contact-reveal text-lg font-light text-white/40 leading-relaxed mb-12 max-w-md">
               Estamos na Vila Nhocuné, zona leste de São Paulo. Atendimento rápido e transparente.
             </p>
-            
+
             <div className="flex flex-col gap-8">
               {[
                 { icon: MapPin, label: 'Endereço', value: 'R. São Vitório, 229\nVila Nhocune — SP, 03561-000' },
@@ -95,14 +95,14 @@ export default function Contact() {
           <div className="contact-reveal bg-white/[0.02] border border-white/[0.06] rounded-[40px] p-8 md:p-14 relative overflow-hidden">
             {/* Decorative background triangle */}
             <Triangle className="absolute -bottom-10 -right-10 w-40 h-40 text-white/[0.02] rotate-12" />
-            
+
             <h3 className="text-3xl font-black text-white mb-2 tracking-[-1px] uppercase">
               Orçamento Rápido
             </h3>
             <p className="text-sm text-white/30 mb-10 font-light">
               Preencha os dados abaixo e fale direto no WhatsApp.
             </p>
-            
+
             <form className="space-y-4 relative z-10" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
@@ -130,7 +130,7 @@ export default function Contact() {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-[10px] font-bold text-white/30 uppercase tracking-[2px] ml-1">E-mail</label>
                 <input

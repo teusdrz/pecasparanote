@@ -37,11 +37,11 @@ export default function Navbar() {
         isScrolled && "bg-navy/85 backdrop-blur-2xl border-b border-white/5 h-[64px] md:h-[72px]"
       )}
     >
-      <a href="#" className="flex items-center gap-2 md:gap-3 group shrink-0" onClick={(e) => scrollToSection(e, 'body')}>
-        <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center">
-          <Triangle className="w-4 h-4 md:w-5 md:h-5 text-white fill-white transition-transform group-hover:rotate-12" />
+      <a href="#" className="flex items-center gap-3 md:gap-4 group shrink-0" onClick={(e) => scrollToSection(e, 'body')}>
+        <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+          <Triangle className="w-5 h-5 md:w-7 md:h-7 text-white fill-white transition-all duration-500 group-hover:rotate-180 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
         </div>
-        <span className="text-[12px] md:text-[14px] font-black text-white tracking-[1px] md:tracking-[2px] uppercase">
+        <span className="text-[15px] md:text-[18px] font-black text-white tracking-[2px] md:tracking-[3px] uppercase transition-all duration-500 group-hover:tracking-[4px] md:group-hover:tracking-[5px] group-hover:opacity-90">
           Pecasparanote
         </span>
       </a>

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Triangle } from 'lucide-react';
+import { Power } from 'lucide-react';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -60,7 +60,7 @@ export default function Process() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           <div>
             <p className="text-[10px] font-bold tracking-[4px] uppercase text-navy/30 mb-6 flex items-center gap-3">
-              <Triangle className="w-2 h-2 fill-navy text-navy rotate-90" />
+              <Power strokeWidth={2.5} className="w-3 h-3 text-navy" />
               Nossa Metodologia
             </p>
             <h2 className="text-5xl md:text-7xl font-black leading-[0.9] tracking-[-3px] text-navy uppercase">
@@ -71,7 +71,7 @@ export default function Process() {
             "Transparência e agilidade são os pilares que sustentam nossos 16 anos de história."
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step) => (
             <div key={step.num} className="process-card group">

@@ -77,7 +77,7 @@ export default function Stats() {
             >
               0
             </div>
-            <div className="text-[10px] font-bold text-white/30 uppercase tracking-[3px]">
+            <div className="text-[10px] font-bold text-white uppercase tracking-[3px]">
               {stat.label}
             </div>
           </div>

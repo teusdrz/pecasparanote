@@ -22,14 +22,14 @@ export default function Hero() {
       const tl = gsap.timeline({ delay: 0.2 });
 
       tl.to(
-          [titleLine1Ref.current, titleLine2Ref.current],
-          {
-            y: 0,
-            duration: 1.2,
-            ease: 'expo.out',
-            stagger: 0.1,
-          }
-        )
+        [titleLine1Ref.current, titleLine2Ref.current],
+        {
+          y: 0,
+          duration: 1.2,
+          ease: 'expo.out',
+          stagger: 0.1,
+        }
+      )
         .from(
           descRef.current,
           {
@@ -79,9 +79,9 @@ export default function Hero() {
     <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden bg-navy selection-white">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80"
+          src="/hero-image/image.png"
           alt="Bancada de assistência técnica"
-          className="hero-bg-img w-full h-full object-cover opacity-20 grayscale"
+          className="hero-bg-img w-full h-full object-cover opacity-40 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy via-transparent to-navy" />
       </div>

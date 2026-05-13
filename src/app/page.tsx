@@ -27,14 +27,14 @@ export default function Home() {
   return (
     <main className="relative selection-white bg-navy">
       <Preloader onComplete={() => setLoading(false)} />
-      
+
       {!loading && (
         <>
           <Navbar />
           <Hero />
           <Stats />
           <Services />
-          
+
           <ServiceDetail
             id="detail-notebooks"
             tag="Unidade 01 — Restauração"
@@ -46,7 +46,7 @@ export default function Home() {
               'Substituição de displays de alta fidelidade',
               'Calibração de sistemas de refrigeração',
             ]}
-            image="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&q=80"
+            image="/tv-break/image.png"
           />
 
           <ServiceDetail

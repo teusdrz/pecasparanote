@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { ArrowRight, Triangle } from 'lucide-react';
+import { ArrowRight, Power } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -35,7 +35,7 @@ export default function CTA() {
     <section ref={sectionRef} className="py-40 bg-white text-center selection-white border-t border-navy/5">
       <div className="container">
         <div className="flex justify-center mb-10">
-          <Triangle className="w-10 h-10 fill-navy text-navy" />
+          <Power className="w-10 h-10 text-navy" />
         </div>
         <h2 className="cta-reveal text-5xl md:text-8xl font-black text-navy tracking-[-4px] leading-[0.9] mb-12 uppercase">
           Sua máquina,<br />nova de novo.
@@ -43,7 +43,7 @@ export default function CTA() {
         <p className="cta-reveal text-xl font-light text-navy/40 mb-16 max-w-[600px] mx-auto leading-relaxed">
           Nossa equipe técnica está pronta para restaurar a performance do seu equipamento hoje mesmo.
         </p>
-        
+
         <div className="cta-reveal flex flex-col sm:flex-row gap-6 justify-center">
           <a
             href="https://wa.me/5511997246578"

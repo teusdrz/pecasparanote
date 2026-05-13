@@ -16,6 +16,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     const nameEl = logoRef.current?.querySelector('.preloader-name') as HTMLElement | null;
     const infoEl = logoRef.current?.querySelector('.preloader-info') as HTMLElement | null;
     const iconEl = logoRef.current?.querySelector('.preloader-icon') as HTMLElement | null;
+    const noteIconEl = logoRef.current?.querySelector('.preloader-note-icon') as HTMLElement | null;
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -27,7 +28,9 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       .to(iconEl, { color: '#ef4444', filter: 'drop-shadow(0 0 6px rgba(239,68,68,0.5))', duration: 0.6, ease: 'power1.inOut' })
       .to(iconEl, { color: '#ffffff', filter: 'drop-shadow(0 0 0px rgba(239,68,68,0))', duration: 0.8, ease: 'power1.inOut', delay: 0.25 })
       .fromTo(nameEl, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.9, ease: 'expo.out' }, '-=0.4')
-      .fromTo(infoEl, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.8, ease: 'expo.out' }, '-=0.6')
+      .to(noteIconEl, { color: '#ef4444', filter: 'drop-shadow(0 0 6px rgba(239,68,68,0.5))', duration: 0.45, ease: 'power1.inOut' })
+      .to(noteIconEl, { color: '#ffffff', filter: 'drop-shadow(0 0 0px rgba(239,68,68,0))', duration: 0.55, ease: 'power1.inOut', delay: 0.15 })
+      .fromTo(infoEl, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.8, ease: 'expo.out' }, '-=0.5')
       .to(
         fillRef.current,
         {
@@ -64,8 +67,8 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       >
         <div className="flex items-center gap-4 mb-1">
           <Power strokeWidth={2.5} className="preloader-icon w-8 h-8 text-white opacity-0" />
-          <span className="preloader-name text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
-            Pecasparanote
+          <span className="preloader-name flex items-center text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
+            Pecasparan<Power strokeWidth={2.5} className="preloader-note-icon w-[20px] h-[20px] md:w-[24px] md:h-[24px] text-white inline-block mx-[2px]" />te
           </span>
           <span className="preloader-info text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
             Informática

@@ -13,50 +13,62 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleLine1Ref = useRef<HTMLSpanElement>(null);
   const titleLine2Ref = useRef<HTMLSpanElement>(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.2 });
+      const line1 = 'Seu equipamento';
+      const line2 = 'em boas mãos.';
+      const obj1 = { n: 0 };
+      const obj2 = { n: 0 };
 
-      tl.to(
-        [titleLine1Ref.current, titleLine2Ref.current],
-        {
-          y: 0,
-          duration: 1.2,
-          ease: 'expo.out',
-          stagger: 0.1,
-        }
-      )
+      // cursor blink
+      const cursorBlink = gsap.to(cursorRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'steps(1)',
+      });
+
+      const tl = gsap.timeline({ delay: 0.4 });
+
+      tl.to(obj1, {
+        n: line1.length,
+        duration: line1.length * 0.06,
+        ease: 'none',
+        onUpdate() {
+          if (titleLine1Ref.current)
+            titleLine1Ref.current.textContent = line1.slice(0, Math.round(obj1.n));
+        },
+      })
+        .to(obj2, {
+          n: line2.length,
+          duration: line2.length * 0.06,
+          ease: 'none',
+          onUpdate() {
+            if (titleLine2Ref.current)
+              titleLine2Ref.current.textContent = line2.slice(0, Math.round(obj2.n));
+          },
+        }, '+=0.15')
+        .add(() => { cursorBlink.kill(); })
+        .to(cursorRef.current, { opacity: 0, duration: 0.4, ease: 'power2.out' })
         .from(
           descRef.current,
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.8,
-            ease: 'power3.out',
-          },
-          '-=0.6'
+          { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' },
+          '-=0.2'
         )
         .from(
           ctaRef.current,
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
+          { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' },
           '-=0.4'
         )
         .from(
           scrollRef.current,
-          {
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.out',
-          },
+          { opacity: 0, duration: 1, ease: 'power2.out' },
           '-=0.2'
         );
 
@@ -89,11 +101,11 @@ export default function Hero() {
       <div className="relative z-10 w-full px-8 md:px-16">
         <div className="max-w-[850px]">
           <h1 className="text-5xl md:text-7xl lg:text-[90px] font-black leading-[0.9] tracking-[-4px] text-white mb-10 uppercase">
-            <span className="block overflow-hidden pb-2">
-              <span ref={titleLine1Ref} className="inline-block translate-y-full">Seu equipamento</span>
+            <span className="block pb-2">
+              <span ref={titleLine1Ref} className="inline-block"></span>
             </span>
-            <span className="block overflow-hidden pb-2">
-              <span ref={titleLine2Ref} className="inline-block translate-y-full text-white/30">em boas mãos.</span>
+            <span className="block pb-2">
+              <span ref={titleLine2Ref} className="inline-block text-white/30"></span><span ref={cursorRef} className="inline-block text-white/30 ml-1">|</span>
             </span>
           </h1>
 

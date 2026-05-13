@@ -41,8 +41,11 @@ export default function Navbar() {
         <div className="group w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 hover:scale-110">
           <Power strokeWidth={2.5} className="w-5 h-5 md:w-7 md:h-7 text-white transition-all duration-700 group-hover:text-red-500 group-hover:drop-shadow-[0_0_10px_rgba(239,68,68,0.7)]" />
         </div>
-        <span className="text-[15px] md:text-[18px] font-black text-white tracking-[2px] md:tracking-[3px] uppercase">
-          Pecasparanote
+        <span className="flex items-center gap-0 text-[15px] md:text-[18px] font-black text-white tracking-[2px] md:tracking-[3px] uppercase">
+          Pecasparan<Power strokeWidth={2.5} className="w-[14px] h-[14px] md:w-[16px] md:h-[16px] text-white inline-block mx-[1px]" />te
+        </span>
+        <span className="text-[15px] md:text-[18px] font-black text-white/50 tracking-[2px] md:tracking-[3px] uppercase">
+          Informática
         </span>
       </a>
 

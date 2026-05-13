@@ -23,11 +23,11 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
       },
     });
 
-    tl.fromTo(iconEl, { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: 'back.out(1.7)' })
-      .to(iconEl, { color: '#ef4444', filter: 'drop-shadow(0 0 8px rgba(239,68,68,0.7))', duration: 0.45, ease: 'power2.inOut' })
-      .to(iconEl, { color: '#ffffff', filter: 'drop-shadow(0 0 0px rgba(239,68,68,0))', duration: 0.55, ease: 'power2.inOut', delay: 0.15 })
-      .fromTo(nameEl, { opacity: 0, x: -18 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, '-=0.3')
-      .fromTo(infoEl, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.45, ease: 'power3.out' }, '-=0.25')
+    tl.fromTo(iconEl, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.9, ease: 'expo.out' })
+      .to(iconEl, { color: '#ef4444', filter: 'drop-shadow(0 0 6px rgba(239,68,68,0.5))', duration: 0.6, ease: 'power1.inOut' })
+      .to(iconEl, { color: '#ffffff', filter: 'drop-shadow(0 0 0px rgba(239,68,68,0))', duration: 0.8, ease: 'power1.inOut', delay: 0.25 })
+      .fromTo(nameEl, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.9, ease: 'expo.out' }, '-=0.4')
+      .fromTo(infoEl, { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: 0.8, ease: 'expo.out' }, '-=0.6')
       .to(
         fillRef.current,
         {

@@ -61,7 +61,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         className="flex flex-col items-center gap-2"
       >
         <div className="flex items-center gap-4 mb-1">
-          <Power className="preloader-icon w-8 h-8 text-white opacity-0" />
+          <Power strokeWidth={2.5} className="preloader-icon w-8 h-8 text-white opacity-0" />
           <span className="preloader-name text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
             Pecasparanote
           </span>

@@ -35,7 +35,7 @@ export default function CTA() {
     <section ref={sectionRef} className="py-40 bg-white text-center selection-white border-t border-navy/5">
       <div className="container">
         <div className="flex justify-center mb-10">
-          <Power className="w-10 h-10 text-navy" />
+          <Power strokeWidth={2.5} className="w-10 h-10 text-navy" />
         </div>
         <h2 className="cta-reveal text-5xl md:text-8xl font-black text-navy tracking-[-4px] leading-[0.9] mb-12 uppercase">
           Sua máquina,<br />nova de novo.

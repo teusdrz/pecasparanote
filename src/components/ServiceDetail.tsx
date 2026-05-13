@@ -89,7 +89,7 @@ export default function ServiceDetail({
         >
           <div className="detail-content" style={{ direction: 'ltr' }}>
             <p className={cn(`detail-reveal-${id}`, "text-[10px] font-bold tracking-[4px] uppercase text-white/20 mb-8 flex items-center gap-3")}>
-              <Power className="w-3 h-3 text-white/40" />
+              <Power strokeWidth={2.5} className="w-3 h-3 text-white/40" />
               {tag}
             </p>
             <h2 className={cn(`detail-reveal-${id}`, "text-4xl md:text-6xl font-black text-white tracking-[-2px] uppercase leading-[1] mb-10")}>

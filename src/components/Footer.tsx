@@ -1,6 +1,6 @@
 'use client';
 
-import { Triangle } from 'lucide-react';
+import { Power } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 pb-20 border-b border-white/[0.04]">
           <div className="footer-brand">
             <a href="#" onClick={(e) => scrollToSection(e, 'body')} className="flex items-center gap-3 group">
-              <Triangle className="w-6 h-6 text-white fill-white transition-transform group-hover:rotate-12" />
+              <Power className="w-6 h-6 text-white transition-transform group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]" />
               <span className="text-[14px] font-black text-white tracking-[2px] uppercase">
                 Pecasparanote
               </span>

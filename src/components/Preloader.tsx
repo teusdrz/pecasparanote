@@ -3,6 +3,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { Power } from 'lucide-react';
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
   const preloaderRef = useRef<HTMLDivElement>(null);
@@ -53,15 +54,15 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
         ref={logoRef}
         className="flex flex-col items-center gap-2 opacity-0"
       >
-        <div className="flex items-center gap-3 mb-1">
-          <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-white opacity-90" />
+        <div className="flex items-center gap-4 mb-1">
+          <Power className="w-8 h-8 text-white opacity-90" />
           <span className="text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase">
-            Pecas Para Note
+            Pecasparanote
+          </span>
+          <span className="text-[11px] font-medium text-white/40 tracking-[6px] uppercase self-end mb-1">
+            Informática
           </span>
         </div>
-        <span className="text-[11px] font-medium text-white/40 tracking-[6px] uppercase">
-          Informática
-        </span>
       </div>
       <div className="w-[220px] h-[1px] bg-white/10 rounded-full overflow-hidden relative">
         <div

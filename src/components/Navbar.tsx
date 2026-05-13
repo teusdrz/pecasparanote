@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Triangle } from 'lucide-react';
+import { Power } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <a href="#" className="flex items-center gap-3 md:gap-4 group shrink-0" onClick={(e) => scrollToSection(e, 'body')}>
         <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
-          <Triangle className="w-5 h-5 md:w-7 md:h-7 text-white fill-white transition-all duration-500 group-hover:rotate-180 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+          <Power className="w-5 h-5 md:w-7 md:h-7 text-white transition-all duration-500 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
         </div>
         <span className="text-[15px] md:text-[18px] font-black text-white tracking-[2px] md:tracking-[3px] uppercase transition-all duration-500 group-hover:tracking-[4px] md:group-hover:tracking-[5px] group-hover:opacity-90">
           Pecasparanote

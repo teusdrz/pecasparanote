@@ -101,7 +101,7 @@ export default function Hero() {
             ref={descRef}
             className="text-lg md:text-xl font-light leading-relaxed text-white/60 mb-12 max-w-[580px]"
           >
-            Assistência técnica especializada. Conserto de computadores, impressoras, notebooks e TVs com peças de qualidade e garantia total.
+            Assistência técnica especializada. Conserto de computadores, impressoras, notebooks e TVs. Também temos peças para reposição, consulte a disponibilidade.
           </p>
 
           <div className="flex flex-wrap gap-6">

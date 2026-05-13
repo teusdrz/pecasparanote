@@ -65,7 +65,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
           <span className="preloader-name text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
             Pecasparanote
           </span>
-          <span className="preloader-info text-[11px] font-black text-white tracking-[6px] uppercase self-end mb-1 opacity-0">
+          <span className="preloader-info text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase opacity-0">
             Informática
           </span>
         </div>

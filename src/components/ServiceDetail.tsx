@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { Check, ArrowRight, Triangle } from 'lucide-react';
+import { Check, ArrowRight, Power } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -89,7 +89,7 @@ export default function ServiceDetail({
         >
           <div className="detail-content" style={{ direction: 'ltr' }}>
             <p className={cn(`detail-reveal-${id}`, "text-[10px] font-bold tracking-[4px] uppercase text-white/20 mb-8 flex items-center gap-3")}>
-              <Triangle className="w-2 h-2 fill-white text-white rotate-90" />
+              <Power className="w-3 h-3 text-white/40" />
               {tag}
             </p>
             <h2 className={cn(`detail-reveal-${id}`, "text-4xl md:text-6xl font-black text-white tracking-[-2px] uppercase leading-[1] mb-10")}>
@@ -98,7 +98,7 @@ export default function ServiceDetail({
             <p className={cn(`detail-reveal-${id}`, "text-lg font-light leading-relaxed text-white/40 mb-12 max-w-[480px]")}>
               {desc}
             </p>
-            
+
             <div className="flex flex-col gap-5 mb-14">
               {items.map((item, i) => (
                 <div key={i} className={cn(`detail-reveal-${id}`, "flex items-center gap-4 group")}>

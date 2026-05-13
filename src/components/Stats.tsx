@@ -9,7 +9,7 @@ if (typeof window !== 'undefined') {
 }
 
 const stats = [
-  { value: 949, label: 'Avaliações Google', suffix: '' },
+  { value: 954, label: 'Avaliações Google', suffix: '' },
   { value: 5.0, label: 'Nota Máxima', suffix: '', isFloat: true },
   { value: 16, label: 'Anos de Experiência', suffix: '' },
   { value: 5000, label: 'Equipamentos Atendidos', suffix: '+' },

@@ -47,21 +47,29 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   return (
     <div
       ref={preloaderRef}
-      className="fixed inset-0 z-[9999] bg-navy flex flex-col items-center justify-center gap-8"
+      className="fixed inset-0 z-[9999] bg-navy flex flex-col items-center justify-center gap-10"
     >
       <div
         ref={logoRef}
-        className="text-2xl font-bold text-white tracking-tight opacity-0"
+        className="flex flex-col items-center gap-2 opacity-0"
       >
-        Pecasparanote
+        <div className="flex items-center gap-3 mb-1">
+          <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[18px] border-b-white opacity-90" />
+          <span className="text-[26px] md:text-[32px] font-black text-white tracking-[4px] uppercase">
+            Pecas Para Note
+          </span>
+        </div>
+        <span className="text-[11px] font-medium text-white/40 tracking-[6px] uppercase">
+          Informática
+        </span>
       </div>
-      <div className="w-[200px] h-0.5 bg-white/10 rounded-full overflow-hidden relative">
+      <div className="w-[220px] h-[1px] bg-white/10 rounded-full overflow-hidden relative">
         <div
           ref={fillRef}
           className="absolute top-0 left-0 h-full w-0 bg-white rounded-full"
         />
       </div>
-      <div className="text-[13px] font-normal text-white/30 tabular-nums">
+      <div className="text-[11px] font-normal text-white/25 tabular-nums tracking-widest">
         {progress}%
       </div>
     </div>
